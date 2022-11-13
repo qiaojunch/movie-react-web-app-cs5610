@@ -1,9 +1,18 @@
 import './navbar.scss';
 import { ArrowDropDown, Notifications, Search } from '@material-ui/icons';
+import { useState } from 'react';
 
 export default function Navbar() {
-  return (
-    <div className='navbar'>
+    const [scrolled, setScrolled] = useState(false)
+
+    // set navbar bg black if scrolled
+    window.onscroll = () => {
+        setScrolled(window.pageYOffset === 0 ? false : true)
+        return () => (window.onscroll = null)   // avoid infinit loop
+    }
+    
+    return (
+    <div className={scrolled ? 'navbar scrolled' : 'navbar'}>
         <div className='container'>
             <div className='left'>
                 <img src='images/netfly-logo.png'/>
