@@ -1,0 +1,58 @@
+.featured {
+    position: relative;
+    // 90% of the viewport height
+    height: 90vp;  
+
+    // movie post
+    img {
+        width: 100%;
+        height: 100%;
+        object-fit: hover;
+    }
+    // movie info
+    .info {
+        width: 35%;
+        position: absolute;
+        display: flex;
+        flex-direction: column;
+        left: 50px;
+        bottom: 100px;
+        color: white;
+
+        img {
+            width: 400px;
+        }
+        .desc {
+            margin: 20px 0px;
+        }
+        .buttons {
+            display: flex;
+
+            button {
+                padding: 10px 20px;
+                margin-right: 10px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                border: none;
+                border-radius: 10px;
+                font-size: 18px;
+                font-weight: 500;
+            }
+
+            &.play {
+                background-color: white;
+                color: var(--main-color);
+            }
+            &.more {
+                background-color: grey;
+                color: var(--main-color);
+            }
+
+            span {
+                margin-left: 5px;
+            }
+        }
+    }
+    
+}

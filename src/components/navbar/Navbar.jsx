@@ -15,7 +15,7 @@ export default function Navbar() {
     <div className={scrolled ? 'navbar scrolled' : 'navbar'}>
         <div className='container'>
             <div className='left'>
-                <img src='images/netfly-logo.png'/>
+                <img src='images/netfly-logo.png' alt=''/>
                 <span>Homepage</span>
                 <span>Series</span>
                 <span>New and Popular</span>
@@ -25,7 +25,7 @@ export default function Navbar() {
                 <Search className='icon'/>
                 <span>KID</span>
                 <Notifications className='icon'/>
-                <img src='images/user-avatar.jpg'/>
+                <img src='images/user-avatar.jpg' alt=''/>
                 <div className='profile'>
                     <ArrowDropDown className='icon'/>
                     <div className='options'>
