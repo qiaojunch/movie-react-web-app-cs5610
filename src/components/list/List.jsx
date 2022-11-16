@@ -11,11 +11,11 @@ export default function List() {
     const handleClick = (direction) => {
         let distance = listRef.current.getBoundingClientRect().x -50;
         if (direction === 'left' && slideNum > 0) {
-            setSlideNum(slideNum + 1)
+            setSlideNum(slideNum - 1)
             listRef.current.style.transform = `translate(${230 + distance}px)`
         } 
-        if (direction === 'right' && slideNum < 10) {
-            setSlideNum(slideNum - 1)
+        if (direction === 'right' && slideNum < 5) {
+            setSlideNum(slideNum + 1)
             listRef.current.style.transform = `translate(${-230 + distance}px)`
         }
     }
