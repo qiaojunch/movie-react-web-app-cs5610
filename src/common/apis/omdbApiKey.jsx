@@ -1,0 +1,1 @@
+export const omdbAPIKey = "185bca0d";

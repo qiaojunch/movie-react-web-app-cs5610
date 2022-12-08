@@ -25,7 +25,7 @@ export default function List() {
         <div className='wrapper'>
             <ArrowBackIosOutlined className='sliderArrow left' 
                 onClick={()=> handleClick('left')}/>
-            <div class='container' ref={listRef}>
+            <div className='container' ref={listRef}>
                 <ListItem index={0}/>
                 <ListItem index={1}/>
                 <ListItem index={2}/>
