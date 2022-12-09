@@ -1,7 +1,8 @@
 import React, { useEffect } from 'react';
 import './detail.scss';
 import Navbar from '../../components/navbar/Navbar';
-import { Star, Theaters, ThumbUp, Event } from '@material-ui/icons';
+import Comments from '../../components/comments/Comments';
+import { Star, Theaters, ThumbUp, Event, Favorite } from '@material-ui/icons';
 import { useDispatch, useSelector } from 'react-redux';
 import { useParams } from 'react-router-dom';
 import { fetchAsyncMovieOrShowDetail, getSelectedMovieOrShow, removeSelectedMovieOrShow } from '../../features/movies/movieSlice';
@@ -62,9 +63,11 @@ export default function Detail() {
             </div>
           </div>
         </div>
-
+        <div className="my-list-section">
+          <span>Add to my list: <Favorite className="favorite-icon" /></span>
+        </div>
         <div className="comment-section">
-        Comments
+          <Comments />
         </div>
       </div>
     </>
