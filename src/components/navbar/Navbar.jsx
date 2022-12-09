@@ -59,7 +59,7 @@ export default function Navbar() {
                 <div className='profile'>
                     <ArrowDropDown className='icon'/>
                     <div className='options'>
-                        <Link to='/' className="link-deco"><span>profile</span></Link>
+                        <Link to='/profile' className="link-deco"><span>profile</span></Link>
                         <Link to='/login' className="link-deco"><span>login</span></Link>
                     </div>
                 </div>

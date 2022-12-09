@@ -21,10 +21,6 @@ export default function Login() {
           <span>
             New to Netflix? <b>Sign up now.</b>
           </span>
-          <small>
-            This page is protected by Google reCAPTCHA to ensure you're not a
-            bot. <b>Learn more</b>.
-          </small>
         </form>
       </div>
     </div>

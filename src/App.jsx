@@ -8,6 +8,7 @@ import Login from "./pages/login/Login"
 import Detail from "./pages/detail/Detail";
 import PageNotFound from "./pages/pageNotFound/PageNotFound";
 import Search from "./pages/search/Search";
+import Profile from "./pages/profile/Profile";
 
 const App = () => {
   return (
@@ -22,6 +23,7 @@ const App = () => {
           <Route path="/watch" element={<Watch/>}></Route>
           <Route path="/pageNotFound" element={<PageNotFound/>}></Route>
           <Route path="/search" element={<Search/>}></Route>
+          <Route path="/profile" element={<Profile/>}></Route>
         </Routes>
       </BrowserRouter>
     </>

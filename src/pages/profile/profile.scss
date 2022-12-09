@@ -1,0 +1,45 @@
+.profile-page-container {
+    background-color: rgb(48, 48, 48);
+}
+
+.profile-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    padding: 90px 100px 0px 100px;
+    color: white;
+    font-weight: 400;
+}
+
+.profile {
+    width: 75%;
+    height: 100vh;
+    color: white;
+}
+
+.title {
+    font-size: 36px;
+    margin-bottom: 10px;
+}
+
+.username {
+    margin-top: 10px;
+}
+
+.email {
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+.reviews {
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.who-to-explore {
+    width: 25%;
+    height: 100vh;
+    padding-top: 20px;
+    margin-left: 30px;
+    font-size: 24px;
+    color: white;
+}
