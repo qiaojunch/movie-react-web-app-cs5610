@@ -1,6 +1,7 @@
 .detail-container {
     background-color: var(--main-color);
     padding: 50px 40px;
+    color: white;
 }
 
 .movie-section {
@@ -63,4 +64,13 @@
 
 .movie-info > div span {
     color: grey;
+}
+
+.my-list-section {
+
+    padding: 20px 0px;
+
+    .favorite-icon {
+        cursor: pointer;
+    }
 }

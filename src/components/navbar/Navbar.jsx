@@ -25,10 +25,11 @@ export default function Navbar() {
 
         // navigate to search page
         const searchPagePath = '/search';
-        navigate(searchPagePath);
 
         dispatch(fetchAsyncMovies(searchTerm));
         dispatch(fetchAsyncShows(searchTerm));
+        navigate(searchPagePath);
+        // reset search input
         setSearchTerm = "";
     }
     
