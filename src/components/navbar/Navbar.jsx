@@ -56,7 +56,7 @@ export default function Navbar() {
             <div className='right'>
                 <span>KID</span>
                 <Notifications className='icon'/>
-                <img src='images/user-avatar.jpg' alt=''/>
+                <img src='https://user-images.githubusercontent.com/75476123/206878666-d2ceed1f-4ccf-4795-be03-acc0885e9fd5.jpg' alt=''/>
                 <div className='profile'>
                     <ArrowDropDown className='icon'/>
                     <div className='options'>

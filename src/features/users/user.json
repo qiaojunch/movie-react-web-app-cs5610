@@ -1,26 +1,26 @@
 [
     { 
-    "_id": "111", 
-    "userName": "Alax",
-    "email": "alax@email.com",
-    "time": "2h",   
-    "image": "user-avatar.jpg",
-    "comment": "You want to wake up in the morning and think the future is going to be great - and that’s what being a spacefaring civilization is all about. It’s about believing in the future and thinking that the future will be better than the past. And I can’t think of anything more exciting than going out there and being among the stars"
+        "_id": "111", 
+        "userName": "Alax",
+        "email": "alax@email.com",
+        "time": "2h",   
+        "image": "https://user-images.githubusercontent.com/75476123/206878666-d2ceed1f-4ccf-4795-be03-acc0885e9fd5.jpg",
+        "comment": "You want to wake up in the morning and think the future is going to be great - and that’s what being a spacefaring civilization is all about. It’s about believing in the future and thinking that the future will be better than the past. And I can’t think of anything more exciting than going out there and being among the stars"
     },
     { 
-    "_id": "222", 
-    "userName": "Wendy",
-    "email": "wendy@email.com",
-    "time": "2h",   
-    "image": "user-avatar.jpg",
-    "comment": "You want to wake up in the morning and think the future is going to be great - and that’s what being a spacefaring civilization is all about. It’s about believing in the future and thinking that the future will be better than the past. And I can’t think of anything more exciting than going out there and being among the stars"
+        "_id": "222", 
+        "userName": "Wendy",
+        "email": "wendy@email.com",
+        "time": "2h",   
+        "image": "https://user-images.githubusercontent.com/75476123/206882489-85dc9069-a3e5-4742-a630-8d8e15cca989.jpg",
+        "comment": "You want to wake up in the morning and think the future is going to be great - and that’s what being a spacefaring civilization is all about. It’s about believing in the future and thinking that the future will be better than the past. And I can’t think of anything more exciting than going out there and being among the stars"
     },
     { 
         "_id": "333", 
         "userName": "Bob",
         "email": "bob@email.com",
         "time": "2h",   
-        "image": "user-avatar.jpg",
+        "image": "https://user-images.githubusercontent.com/75476123/206882491-9cb127e1-7677-4660-b602-ba79165bd7e4.jpg",
         "comment": "You want to wake up in the morning and think the future is going to be great - and that’s what being a spacefaring civilization is all about. It’s about believing in the future and thinking that the future will be better than the past. And I can’t think of anything more exciting than going out there and being among the stars"
     }
 ]

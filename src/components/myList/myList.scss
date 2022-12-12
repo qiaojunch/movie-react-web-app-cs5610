@@ -1,0 +1,16 @@
+.my-list {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+  }
+  
+  .my-list-item {
+    margin: 10px;
+    cursor: pointer;
+  }
+  
+  .my-list-item img {
+    width: 200px;
+    height: auto;
+  }
+  
