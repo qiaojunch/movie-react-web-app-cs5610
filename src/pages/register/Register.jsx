@@ -1,5 +1,6 @@
 import { useRef } from "react";
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import "./register.scss";
 
 export default function Register() {
@@ -8,6 +9,8 @@ export default function Register() {
 
   const emailRef = useRef();
   const passwordRef = useRef();
+
+  const navigate = useNavigate();  // handle sign-in button
 
   const handleStart = () => {
     setEmail(emailRef.current.value);
@@ -21,10 +24,10 @@ export default function Register() {
         <div className="wrapper">
           <img
             className="logo"
-            src='./images/netfly-logo.png'
+            src='images/netfly-logo.png'
             alt=""
           />
-          <button className="loginButton">Sign In</button>
+          <button className="loginButton" onClick={() => navigate('/login')}>Sign In</button>
         </div>
       </div>
       <div className="container">

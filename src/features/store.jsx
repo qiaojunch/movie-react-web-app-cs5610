@@ -1,8 +1,11 @@
 import { configureStore } from "@reduxjs/toolkit";
-import moviesReducer from "./movies/movieSlice";
+import movieReducer from "./movies/movie-reducer";
+import omdbReducer from "./omdb/omdb-reducer";
 
 export const store = configureStore({
     reducer: {
-      movies: moviesReducer,
+      movies: movieReducer,
+      omdb: omdbReducer
     },
   });
+

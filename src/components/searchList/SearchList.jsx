@@ -1,29 +1,22 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import Slider from 'react-slick';
 import { settings } from '../../common/settings';   // make slider screen-dynamic
-import { useDispatch, useSelector } from 'react-redux';
+import { useSelector } from 'react-redux';
 import { getAllMovies, getAllShows } from '../../features/omdb/omdb-reducer';
-import MovieItem from '../movieItem/MovieItem';
-import "./movieList.scss";
-import { findMoivesThunk, findShowsThunk } from '../../features/movies/movie-thunk';
+import SearchItem from '../searchItem/SearchItem';
+import "./searchList.scss";
 
-export default function MovieList() {
+export default function SearchList() {
 
-    const { movies, shows } = useSelector(state => state.movies);
-    const dispatch = useDispatch();
-
-    let renderMovies = "";   
+    const movies = useSelector(getAllMovies);
+    const shows = useSelector(getAllShows);
+    let renderMovies = "";   // create a variable to hold movie response data 
     let renderShows = "";
 
-    useEffect(() => {
-        dispatch(findMoivesThunk());
-        dispatch(findShowsThunk());
-    }, []);
-
     renderMovies = 
-        movies ? (
-            movies.map((movie) => (
-                <MovieItem key={movie._id} data={movie} />
+        movies.Response === "True" ? (
+            movies.Search.map((movie, index) => (
+                <SearchItem key={index} data={movie} />
             ))
         ) : (
             <div className="movies-error">
@@ -32,9 +25,9 @@ export default function MovieList() {
         );
     
     renderShows = 
-        shows ? (
-            shows.map((show) => (
-                <MovieItem key={show._id} data={show} />
+        shows.Response === "True" ? (
+            shows.Search.map((show, index) => (
+                <SearchItem key={index} data={show} />
             ))
         ) : (
             <div className="movies-error">
@@ -60,5 +53,6 @@ export default function MovieList() {
     </div>
   )
 }
+
 
 

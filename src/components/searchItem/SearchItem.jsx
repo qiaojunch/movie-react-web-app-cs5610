@@ -1,8 +1,8 @@
 import React from 'react';
-import './movieItem.scss';
+import './searchItem.scss';
 import { Link } from 'react-router-dom';
 
-export default function MovieItem(props) {
+export default function SearchItem(props) {
     const {data} = props;
 
   return (
@@ -10,12 +10,12 @@ export default function MovieItem(props) {
         <Link to={`/detail/${data.imdbID}`} >
             <div className="item-inner">
                 <div className="item-top">
-                    <img src={data.img} alt={data.title} />
+                    <img src={data.Poster} alt={data.Title} />
                 </div>
                 <div className="item-bottom">
                     <div className="item-info">
-                        <h4>{data.title}</h4>
-                        <p>{data.year}</p>
+                        <h4>{data.Title}</h4>
+                        <p>{data.Year}</p>
                     </div>
                 </div>
             </div>
@@ -23,3 +23,4 @@ export default function MovieItem(props) {
     </div>
   )
 }
+

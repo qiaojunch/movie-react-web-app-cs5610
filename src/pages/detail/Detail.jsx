@@ -5,15 +5,12 @@ import Comments from '../../components/comments/Comments';
 import { Star, Theaters, ThumbUp, Event, Favorite } from '@material-ui/icons';
 import { useDispatch, useSelector } from 'react-redux';
 import { useParams } from 'react-router-dom';
-import { fetchAsyncMovieOrShowDetail, getSelectedMovieOrShow, removeSelectedMovieOrShow } from '../../features/movies/movieSlice';
+import { fetchAsyncMovieOrShowDetail, getSelectedMovieOrShow, removeSelectedMovieOrShow } from '../../features/omdb/omdb-reducer';
 
 export default function Detail() {
   const {imdbID} = useParams();
   const data = useSelector(getSelectedMovieOrShow);
   const dispatch = useDispatch();
-
-  console.log("imdbID: ",imdbID);
-  console.log("detail: ",data);
 
   useEffect(() => {
     dispatch(fetchAsyncMovieOrShowDetail(imdbID));
