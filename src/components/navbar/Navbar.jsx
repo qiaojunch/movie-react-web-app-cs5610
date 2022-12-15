@@ -3,12 +3,15 @@ import './navbar.scss';
 import { ArrowDropDown, Notifications, Search } from '@material-ui/icons';
 import { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { fetchAsyncMovies, fetchAsyncShows } from '../../features/omdb/omdb-reducer';
+import { logoutThunk } from '../../features/users/user-thunk';
 
 export default function Navbar() {
     const [scrolled, setScrolled] = useState(false);
     const [searchTerm, setSearchTerm] = useState("");
+    const { currentUser } = useSelector( state => state.users );
+
     const dispatch = useDispatch();
     const navigate = useNavigate();
 
@@ -24,14 +27,17 @@ export default function Navbar() {
         // handler invalid search 
         if (searchTerm === "") return alert("Please enter search term.");
 
-        // navigate to search page
-        const searchPagePath = '/search';
-
         dispatch(fetchAsyncMovies(searchTerm));
         dispatch(fetchAsyncShows(searchTerm));
-        navigate(searchPagePath);
+        // navigate to search page
+        navigate('/search');
         // reset search input
         setSearchTerm("");
+    }
+
+    // handle logout link
+    const handleLogout = (e) => {
+        dispatch(logoutThunk());
     }
     
     return (
@@ -61,6 +67,8 @@ export default function Navbar() {
                     <div className='options'>
                         <Link to='/profile' className="link-deco"><span>profile</span></Link>
                         <Link to='/login' className="link-deco"><span>login</span></Link>
+                        { currentUser && 
+                            <Link to='/login' className="link-deco" onClick={handleLogout}><span>logout</span></Link>}
                     </div>
                 </div>
             </div>

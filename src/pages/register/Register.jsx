@@ -1,36 +1,34 @@
+import React from "react";
 import { useState } from "react";
-import { useDispatch } from "react-redux";
-
-import { useNavigate } from "react-router-dom";
+import { useDispatch, useSelector } from "react-redux";
+import {Navigate, useNavigate} from "react-router";
+import { Link } from "react-router-dom";
 import { registerThunk } from "../../features/users/user-thunk";
 import "./register.scss";
 
 export default function Register() {
   const [password, setPassword] = useState(""); 
   const [username, setUsername] = useState("");
+  const { currentUser } = useSelector( state => state.users );
 
   const dispatch = useDispatch();
-  const navigate = useNavigate();  // handle sign-in button
-
-  const handleLoginBtn = () => {
-    let path =`/`;
-    console.log("login click: ", path);
-    navigate(path);
-  }
-  const handlRegisterBtn = () => {
+  const navigate = useNavigate();
+  const handlRegisterBtn = (e) => {
+    e.preventDefault();
     dispatch(registerThunk({username, password}));
-    navigate(`/login`);
   }
+
+  if (currentUser) {
+    console.log("register user", currentUser);
+    return (<Navigate to={'/profile'}/>)
+  }
+
   return (
     <div className="register">
       <div className="top">
         <div className="wrapper">
-          <img
-            className="logo"
-            src='images/netfly-logo.png'
-            alt=""
-          />
-          <button className="loginButton" onClick={handleLoginBtn}>Sign In</button>
+          <Link to='/'><img src='images/netfly-logo.png' className='logo' alt=''/></Link>
+          <button className="loginButton" onClick={() => navigate('/login')}>Sign In</button>
         </div>
       </div>
       <div className="container">

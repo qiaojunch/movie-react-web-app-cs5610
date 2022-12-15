@@ -1,18 +1,10 @@
 import { InfoOutlined, PlayArrow } from '@material-ui/icons'
-import { useEffect } from 'react'
-import { useDispatch, useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
-import { findMovieRandomThunk } from '../../features/movies/movie-thunk';
 import './featured.scss'
 
-export default function Featured() {
-    const { featured } = useSelector( state => state.movies)
-    console.log("featured:", featured);
-    const dispatch = useDispatch();
+export default function Featured(props) {
+    const { featured } = props;
 
-    useEffect(() => {
-        dispatch(findMovieRandomThunk())
-    },[])
   return (
     <div className='featured'>
         <img src={featured.img}

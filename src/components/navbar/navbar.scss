@@ -1,7 +1,7 @@
 .navbar {
     // background-color: var(--main-color);
     color: white;
-    font-size: 14px;
+    font-size: 15px;
     position: fixed;
     width: 100%;
     z-index: 999;
@@ -101,8 +101,10 @@
                     border-radius: 3px;
                 }
                 span {
-                    padding: 5px;
+                    padding: 10px;
                     cursor: pointer;
+                    mix-blend-mode: difference;
+                    font-size: 17px;
                 }
                 
                 // Only show dropdown options if hover

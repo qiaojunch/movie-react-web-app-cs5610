@@ -1,9 +1,10 @@
+import React from "react";
 import "./login.scss";
 import { Link } from "react-router-dom";
 import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { loginThunk } from "../../features/users/user-thunk";
-import {Navigate, useNavigate} from "react-router";
+import {Navigate} from "react-router";
 
 export default function Login() {
   const [username, setUsername] = useState("");
@@ -24,13 +25,7 @@ export default function Login() {
     <div className="login">
       <div className="top">
         <div className="wrapper">
-  
-            <img
-              className="logo"
-              src='./images/netfly-logo.png'
-              alt=""
-            />
-
+          <Link to='/'><img src='images/netfly-logo.png' className='logo' alt=''/></Link>
         </div>
       </div>
       <div className="container">
