@@ -1,13 +1,15 @@
 import { ArrowBackOutlined } from "@material-ui/icons";
+import Navbar from "../../components/navbar/Navbar";
 import "./watch.scss";
 
 export default function Watch() {
   return (
     <div className="watch">
-      <div className="back">
+      {/* <div className="back">
         <ArrowBackOutlined />
         Home
-      </div>
+      </div> */}
+      <Navbar />
       <video
         className="video"
         autoPlay

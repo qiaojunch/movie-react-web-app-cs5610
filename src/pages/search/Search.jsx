@@ -2,9 +2,9 @@ import React from 'react';
 import './search.scss';
 import { useDispatch } from 'react-redux';
 import { useEffect } from 'react';
-import MovieList from '../../components/movieList/MovieList';
-import { fetchAsyncMovies, fetchAsyncShows } from '../../features/movies/movieSlice';
+import { fetchAsyncMovies, fetchAsyncShows } from '../../features/omdb/omdb-reducer';
 import Navbar from '../../components/navbar/Navbar';
+import SearchList from '../../components/searchList/SearchList';
 
 
 export default function Search(searchTerm) {
@@ -15,12 +15,12 @@ export default function Search(searchTerm) {
     dispatch(fetchAsyncMovies(searchTerm));
     dispatch(fetchAsyncShows(searchTerm));
   }, [dispatch]);
-
+  
   return (
     <div>
       <Navbar />
       <div className="search-container">
-        <MovieList />
+        <SearchList />
       </div>
     </div>
   )

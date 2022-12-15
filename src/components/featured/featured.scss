@@ -6,7 +6,7 @@
     // movie post
     img {
         width: 100%;
-        height: 100%;
+        height: 700px;
         object-fit: hover;
     }
     // movie info
@@ -19,9 +19,6 @@
         bottom: 100px;
         color: white;
 
-        img {
-            width: 400px;
-        }
         .desc {
             margin: 20px 0px;
         }
@@ -51,6 +48,10 @@
 
             span {
                 margin-left: 5px;
+            }
+
+            .link-deco {
+                text-decoration: none;
             }
         }
     }

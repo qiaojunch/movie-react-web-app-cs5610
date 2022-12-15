@@ -1,9 +1,10 @@
+import React from 'react';
 import './navbar.scss';
 import { ArrowDropDown, Notifications, Search } from '@material-ui/icons';
 import { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
-import { fetchAsyncMovies, fetchAsyncShows } from '../../features/movies/movieSlice';
+import { fetchAsyncMovies, fetchAsyncShows } from '../../features/omdb/omdb-reducer';
 
 export default function Navbar() {
     const [scrolled, setScrolled] = useState(false);
@@ -30,7 +31,7 @@ export default function Navbar() {
         dispatch(fetchAsyncShows(searchTerm));
         navigate(searchPagePath);
         // reset search input
-        setSearchTerm = "";
+        setSearchTerm("");
     }
     
     return (
@@ -39,8 +40,6 @@ export default function Navbar() {
             <div className='left'>
                 <Link to='/'><img src='images/netfly-logo.png' alt=''/></Link>
                 <Link to='/' className="link-deco"><span>Homepage</span></Link>
-                <Link to='/' className="link-deco"><span>New and Popular</span></Link>
-                <Link to='/mylist' className="link-deco"><span>My List</span></Link>
             </div>
             <div className="search-bar">
                 <form onSubmit={sumbitHandler}>

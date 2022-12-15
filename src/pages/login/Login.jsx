@@ -1,15 +1,18 @@
 import "./login.scss";
+import { Link } from "react-router-dom";
 
 export default function Login() {
   return (
     <div className="login">
       <div className="top">
         <div className="wrapper">
-          <img
-            className="logo"
-            src='./images/netfly-logo.png'
-            alt=""
-          />
+  
+            <img
+              className="logo"
+              src='./images/netfly-logo.png'
+              alt=""
+            />
+
         </div>
       </div>
       <div className="container">
@@ -19,7 +22,7 @@ export default function Login() {
           <input type="password" placeholder="Password" />
           <button className="loginButton">Sign In</button>
           <span>
-            New to Netflix? <b>Sign up now.</b>
+            New to Netfly? <Link to='/register'><b>Sign up now.</b></Link>
           </span>
         </form>
       </div>
