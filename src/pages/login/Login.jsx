@@ -1,7 +1,25 @@
 import "./login.scss";
 import { Link } from "react-router-dom";
+import { useEffect, useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { loginThunk } from "../../features/users/user-thunk";
+import {Navigate, useNavigate} from "react-router";
 
 export default function Login() {
+  const [username, setUsername] = useState("");
+  const [password, setPassword] = useState("");
+  const {currentUser} = useSelector((state) => state.users)
+  const dispatch = useDispatch();
+
+  const handleLoginBtn = (e) => {
+    e.preventDefault();
+    dispatch(loginThunk({username, password}))
+  }
+
+  if (currentUser) {
+    return (<Navigate to={'/profile'}/>)
+  }
+  
   return (
     <div className="login">
       <div className="top">
@@ -18,9 +36,18 @@ export default function Login() {
       <div className="container">
         <form>
           <h1>Sign In</h1>
-          <input type="email" placeholder="Email or phone number" />
-          <input type="password" placeholder="Password" />
-          <button className="loginButton">Sign In</button>
+          <input
+            placeholder="Username" 
+            value={username}
+            onChange={ e => setUsername(e.target.value)}
+          />
+          <input type="password" 
+            placeholder="Password"
+            value={password}
+            onChange={ e => setPassword(e.target.value)}
+          />
+          <button className="loginButton"
+            onClick={handleLoginBtn}>Sign In</button>
           <span>
             New to Netfly? <Link to='/register'><b>Sign up now.</b></Link>
           </span>

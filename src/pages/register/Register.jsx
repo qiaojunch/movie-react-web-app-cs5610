@@ -1,23 +1,26 @@
-import { useRef } from "react";
 import { useState } from "react";
+import { useDispatch } from "react-redux";
+
 import { useNavigate } from "react-router-dom";
+import { registerThunk } from "../../features/users/user-thunk";
 import "./register.scss";
 
 export default function Register() {
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState(""); // password is invoked after typing in email
+  const [password, setPassword] = useState(""); 
+  const [username, setUsername] = useState("");
 
-  const emailRef = useRef();
-  const passwordRef = useRef();
-
+  const dispatch = useDispatch();
   const navigate = useNavigate();  // handle sign-in button
 
-  const handleStart = () => {
-    setEmail(emailRef.current.value);
-  };
-  const handleFinish = () => {
-    setPassword(passwordRef.current.value);
-  };
+  const handleLoginBtn = () => {
+    let path =`/`;
+    console.log("login click: ", path);
+    navigate(path);
+  }
+  const handlRegisterBtn = () => {
+    dispatch(registerThunk({username, password}));
+    navigate(`/login`);
+  }
   return (
     <div className="register">
       <div className="top">
@@ -27,7 +30,7 @@ export default function Register() {
             src='images/netfly-logo.png'
             alt=""
           />
-          <button className="loginButton" onClick={() => navigate('/login')}>Sign In</button>
+          <button className="loginButton" onClick={handleLoginBtn}>Sign In</button>
         </div>
       </div>
       <div className="container">
@@ -37,21 +40,23 @@ export default function Register() {
           Ready to watch? Enter your email to create or restart your membership.
         </p>
         {/* if email is typed in, then show input field for password, if no email input, only show email input field */}
-        {!email ? (
-          <div className="input">
-            <input type="email" placeholder="email address" ref={emailRef} />
-            <button className="registerButton" onClick={handleStart}>
-              Get Started
-            </button>
-          </div>
-        ) : (
-          <form className="input">
-            <input type="password" placeholder="password" ref={passwordRef} />
-            <button className="registerButton" onClick={handleFinish}>
+        <form className="input">
+            <input 
+              placeholder="username" 
+              value={username}
+              onChange={ e => setUsername(e.target.value)}
+              />
+            <input 
+              placeholder="password" 
+              value={password}
+              onChange={ e => setPassword(e.target.value)}
+              />
+            <button 
+              className="registerButton" 
+              onClick={handlRegisterBtn}>
               Start
             </button>
           </form>
-        )}
       </div>
     </div>
   );

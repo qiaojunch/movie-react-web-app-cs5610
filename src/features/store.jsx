@@ -1,21 +1,13 @@
 import { configureStore } from "@reduxjs/toolkit";
-<<<<<<< HEAD
-import moviesReducer from "./movies/movieSlice";
+import movieReducer from "./movies/movie-reducer";
+import omdbReducer from "./omdb/omdb-reducer";
 import userReducer from "./users/user-reducer";
 
 export const store = configureStore({
     reducer: {
-      movies: moviesReducer,
-      users: userReducer
-=======
-import movieReducer from "./movies/movie-reducer";
-import omdbReducer from "./omdb/omdb-reducer";
-
-export const store = configureStore({
-    reducer: {
       movies: movieReducer,
-      omdb: omdbReducer
->>>>>>> link-movie-api
+      omdb: omdbReducer,
+      users: userReducer
     },
   });
 

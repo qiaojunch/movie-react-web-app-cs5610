@@ -56,7 +56,7 @@ export default function Navbar() {
                 <span>KID</span>
                 <Notifications className='icon'/>
                 <img src='https://user-images.githubusercontent.com/75476123/206878666-d2ceed1f-4ccf-4795-be03-acc0885e9fd5.jpg' alt=''/>
-                <div className='profile'>
+                <div className='navbar-profile'>
                     <ArrowDropDown className='icon'/>
                     <div className='options'>
                         <Link to='/profile' className="link-deco"><span>profile</span></Link>
