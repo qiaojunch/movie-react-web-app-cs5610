@@ -31,25 +31,34 @@ export default function Profile() {
                         <div className="title">My Profile</div>
                         <hr/>
                          <div className="app">
+                         <h3>username</h3>
                             <EditField
                                 initialValue={currentUser.username}
                                 onSave={setUserName}
                             />
+                            <h3>email</h3>
                             <EditField
                                 initialValue={currentUser.email}
                                 onSave={setEmail}
                             />
+                            <h3>Date of Birth</h3>
+                            <div className="info">{currentUser.DOB}</div>
+                            <h3>Bio</h3>
+                            <div className="info">
+                                {currentUser.bio}
+                            </div>
                             </div>
                         <hr/>
                         <MyList movies={movies} />
-                    </div>
-                    <h3>Following</h3>
-                    <WhoToExploreList />
-                    <h3>Followers</h3>
-                    <div className="d-sm-none d-md-none d-lg-block col-lg-4 col-xl-4">
-                    <WhoToExploreList/>
+                        <h3>Following</h3>
+                        <WhoToExploreList/>
+                        <h3>Followers</h3>
+                        <div>
+                        <WhoToExploreList/>
+                        </div>
                     </div>
                 </div>
+                
             </div>
             }
         </>

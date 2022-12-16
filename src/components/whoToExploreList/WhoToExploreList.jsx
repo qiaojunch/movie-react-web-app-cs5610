@@ -5,12 +5,10 @@ import './whoToExploreList.scss';
 import userArray from '../../features/users/user.json';
 
 const WhoToExploreList = (props) => {
-    // const userArray = useSelector((state) => state.users)
     const {users} = props;
     return(
         <ul className="list-group">
             <li className="list-group-item">
-                <h3>Who to Explore</h3>
             </li>
             {
                 userArray.map(user =>
