@@ -6,6 +6,7 @@ import WhoToExploreList from "../../components/whoToExploreList/WhoToExploreList
 import './profile.scss';
 import MyList from "../../components/myList/MyList";
 import { findMoivesThunk } from "../../features/movies/movie-thunk";
+import { findAllUsersThunk } from "../../features/users/user-thunk";
 
 
 export default function Profile() {
@@ -13,11 +14,13 @@ export default function Profile() {
     const [email, setEmail] = useState('');
     const { movies } = useSelector( state => state.movies );
     const { currentUser } = useSelector( state => state.users );
+    const {users} = useSelector(state => state.users)
 
     const dispatch = useDispatch();
 
     useEffect(() => {
         dispatch(findMoivesThunk());
+        dispatch(findAllUsersThunk());
         console.log("profile movies: ", movies);
     }, []);
     
@@ -51,7 +54,7 @@ export default function Profile() {
                         <hr/>
                         <MyList movies={movies} />
                         <h3>Following</h3>
-                        <WhoToExploreList/>
+                        <WhoToExploreList props={users}/>
                         <h3>Followers</h3>
                         <div>
                         <WhoToExploreList/>

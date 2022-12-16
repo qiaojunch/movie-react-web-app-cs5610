@@ -8,6 +8,7 @@ import Detail from "./pages/detail/Detail";
 import PageNotFound from "./pages/pageNotFound/PageNotFound";
 import Search from "./pages/search/Search";
 import Profile from "./pages/profile/Profile";
+import PublicProfile from "./pages/publicProfile/PublicProfile";
 import CurrentUser from "./components/current-user/CurrentUser";
 
 const App = () => {
@@ -25,6 +26,7 @@ const App = () => {
             <Route path="/pageNotFound" element={<PageNotFound/>}></Route>
             <Route path="/search" element={<Search/>}></Route>
             <Route path="/profile" element={<Profile/>}></Route>
+            <Route path="/profile/:uid" element={<PublicProfile/>}/>
           
         </Routes>
         </CurrentUser>
