@@ -12,7 +12,7 @@
 }
 
 .profile {
-    width: 75%;
+    width: 90%;
     height: 100vh;
     color: white;
 }
@@ -34,12 +34,19 @@
     margin-top: 10px;
     margin-bottom: 10px;
 }
+h3 {
+    margin-bottom: 10px;
+    margin-top: 5px;
+}
+.info {
+    margin-bottom: 10px;
+}
 
-.who-to-explore {
-    width: 25%;
-    height: 100vh;
-    padding-top: 20px;
-    margin-left: 30px;
-    font-size: 24px;
-    color: white;
+
+hr {
+    border: 1px solid grey;
+}
+
+.comment-section {
+    margin: 20px 0px;
 }

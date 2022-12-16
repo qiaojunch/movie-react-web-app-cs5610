@@ -10,7 +10,6 @@ const WhoToExploreList = (props) => {
     return(
         <ul className="list-group">
             <li className="list-group-item">
-                <h3>Who to Explore</h3>
             </li>
             {
                 userArray.map(user =>

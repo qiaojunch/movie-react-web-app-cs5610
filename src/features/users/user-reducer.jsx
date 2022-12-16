@@ -57,6 +57,13 @@ const userSlice = createSlice({
             state.currentUser = null
             state.loading = false
         },
+        [findUserByIdThunk.fulfilled]: (state, action) => {
+            state.publicProfile = action.payload
+        },
+        [findAllUsersThunk.fulfilled]: (state, action) => {
+            state.users = action.payload
+            state.loading = false
+        }
     }
 });
 

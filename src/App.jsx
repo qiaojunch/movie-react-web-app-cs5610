@@ -9,6 +9,7 @@ import PageNotFound from "./pages/pageNotFound/PageNotFound";
 import Search from "./pages/search/Search";
 import Profile from "./pages/profile/Profile";
 import CurrentUser from "./components/current-user/CurrentUser";
+import PublicProfile from "./pages/public-profile/PublicProfile";
 
 const App = () => {
   return (
@@ -25,7 +26,7 @@ const App = () => {
             <Route path="/pageNotFound" element={<PageNotFound/>}></Route>
             <Route path="/search" element={<Search/>}></Route>
             <Route path="/profile" element={<Profile/>}></Route>
-          
+            <Route path="/profile/:uid" element={<PublicProfile />}></Route>
         </Routes>
         </CurrentUser>
       </BrowserRouter>

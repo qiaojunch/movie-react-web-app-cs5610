@@ -1,5 +1,6 @@
 import React from 'react';
 import './comments.scss';
+import { Link } from 'react-router-dom';
 
 export default function CommentItem(props) {
   const { comment } = props;
@@ -9,7 +10,9 @@ export default function CommentItem(props) {
   return (
     <div className="comment-item-container">
         <div>
-            <img src={comment.author.image} />
+            <Link to={`/profile/${comment.author._id}`}>
+              <img src={comment.author.image} />
+            </Link>
         </div>
         <div className="comment-right-part">
             <div className="comment-content">
