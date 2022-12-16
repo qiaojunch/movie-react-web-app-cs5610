@@ -12,6 +12,11 @@ export default function Navbar() {
     const [searchTerm, setSearchTerm] = useState("");
     const { currentUser } = useSelector( state => state.users );
 
+    let userAvatar = "/image/netfly-avatar.jpg";
+    if (currentUser) {
+        userAvatar = currentUser.image;
+    }
+    
     const dispatch = useDispatch();
     const navigate = useNavigate();
 
@@ -61,7 +66,7 @@ export default function Navbar() {
             <div className='right'>
                 <span>KID</span>
                 <Notifications className='icon'/>
-                <img src='https://user-images.githubusercontent.com/75476123/206878666-d2ceed1f-4ccf-4795-be03-acc0885e9fd5.jpg' alt=''/>
+                <img src={userAvatar} alt=''/>
                 <div className='navbar-profile'>
                     <ArrowDropDown className='icon'/>
                     <div className='options'>
