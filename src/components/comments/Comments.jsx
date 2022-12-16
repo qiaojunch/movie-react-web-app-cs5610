@@ -1,18 +1,24 @@
 import React from 'react';
+import { useSelector } from 'react-redux';
 import CommentForm from './CommentForm';
 import CommentItem from './CommentItem';
 
-export default function Comments() {
+export default function Comments(props) {
+  const { comments } = props;
+  const { currentUser } = useSelector( state => state.users );
+
+  // fetch list of comments 
+
   return (
     <div className="comments-container">
         <h3>Comments</h3>
-        <div className="comment-form">
+        { currentUser && 
+          <div className="comment-form">
             <CommentForm />
-        </div>
+          </div>
+        }
         <div className="comments">
-            <CommentItem />
-            <CommentItem />
-            <CommentItem />
+            { comments.map((item) => <CommentItem key={item._id} comment={item} /> ) }
         </div>
     </div>
   )

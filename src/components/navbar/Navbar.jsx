@@ -44,7 +44,7 @@ export default function Navbar() {
     <div className={scrolled ? 'navbar scrolled' : 'navbar'}>
         <div className='container'>
             <div className='left'>
-                <Link to='/'><img src='images/netfly-logo.png' alt=''/></Link>
+                <Link to='/'><img src='/images/netfly-logo.png' alt=''/></Link>
                 <Link to='/' className="link-deco"><span>Homepage</span></Link>
             </div>
             <div className="search-bar">
@@ -65,10 +65,10 @@ export default function Navbar() {
                 <div className='navbar-profile'>
                     <ArrowDropDown className='icon'/>
                     <div className='options'>
-                        <Link to='/profile' className="link-deco"><span>profile</span></Link>
-                        <Link to='/login' className="link-deco"><span>login</span></Link>
+                        <Link to='/profile' className="link-deco"><span>Profile</span></Link>
+                        <Link to='/login' className="link-deco"><span>Login</span></Link>
                         { currentUser && 
-                            <Link to='/login' className="link-deco" onClick={handleLogout}><span>logout</span></Link>}
+                            <Link to='/login' className="link-deco" onClick={handleLogout}><span>Logout</span></Link>}
                     </div>
                 </div>
             </div>

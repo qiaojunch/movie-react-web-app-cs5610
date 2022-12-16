@@ -25,7 +25,7 @@ export default function Login() {
     <div className="login">
       <div className="top">
         <div className="wrapper">
-          <Link to='/'><img src='images/netfly-logo.png' className='logo' alt=''/></Link>
+          <Link to='/'><img src='/images/netfly-logo.png' className='logo' alt=''/></Link>
         </div>
       </div>
       <div className="container">

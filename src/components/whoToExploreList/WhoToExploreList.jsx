@@ -4,9 +4,9 @@ import WhoToExploreItem from "../whoToExplore/WhoToExploreItem";
 import './whoToExploreList.scss';
 import userArray from '../../features/users/user.json';
 
-const WhoToExploreList = () => {
+const WhoToExploreList = (props) => {
     // const userArray = useSelector((state) => state.users)
-
+    const {users} = props;
     return(
         <ul className="list-group">
             <li className="list-group-item">

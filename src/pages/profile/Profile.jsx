@@ -43,6 +43,9 @@ export default function Profile() {
                         <hr/>
                         <MyList movies={movies} />
                     </div>
+                    <h3>Following</h3>
+                    <WhoToExploreList />
+                    <h3>Followers</h3>
                     <div className="d-sm-none d-md-none d-lg-block col-lg-4 col-xl-4">
                     <WhoToExploreList/>
                     </div>

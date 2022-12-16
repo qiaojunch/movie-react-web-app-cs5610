@@ -6,19 +6,22 @@ import { Star, Theaters, ThumbUp, Event, Favorite } from '@material-ui/icons';
 import { useDispatch, useSelector } from 'react-redux';
 import { useParams } from 'react-router-dom';
 import { fetchAsyncMovieOrShowDetail, getSelectedMovieOrShow, removeSelectedMovieOrShow } from '../../features/omdb/omdb-reducer';
-
+import { findCommentsByMovieThunk } from '../../features/comments/comments-thunk';
 export default function Detail() {
   const {imdbID} = useParams();
   const data = useSelector(getSelectedMovieOrShow);
+  const { comments } = useSelector( state => state.comments );
   const dispatch = useDispatch();
 
   useEffect(() => {
-    dispatch(fetchAsyncMovieOrShowDetail(imdbID));
+    dispatch(findCommentsByMovieThunk(imdbID));     // find all comments for movie
+    dispatch(fetchAsyncMovieOrShowDetail(imdbID));  // find movie or show detial from imdb api
     return () => {
       dispatch(removeSelectedMovieOrShow());
     };
   }, [dispatch, imdbID])
 
+  console.log("****comments****: ", comments);
   return (
     <>
       <Navbar />
@@ -64,7 +67,7 @@ export default function Detail() {
           <span>Add to my list: <Favorite className="favorite-icon" /></span>
         </div>
         <div className="comment-section">
-          <Comments />
+          <Comments comments={comments}/>
         </div>
       </div>
     </>

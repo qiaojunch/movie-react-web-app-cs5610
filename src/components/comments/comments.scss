@@ -2,11 +2,14 @@
 .comment-form-textarea {
     width: 100%;
     height: 50px;
+    font-size: 16px;
     background-color: rgba(255, 255, 255, 0.2);
     margin-bottom: 8px;
     margin-top: 8px;
+    padding: 10px;
     border: none;
     border-radius: 8px;
+    color: white;
   }
   
   .comment-form-button {
@@ -18,6 +21,10 @@
     border: none;
     color: grey;
     cursor: pointer;
+
+    &:hover {
+      color: white;
+    }
   }
 
   .comment-form-cancel-button {

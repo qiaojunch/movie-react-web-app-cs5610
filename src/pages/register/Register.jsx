@@ -27,7 +27,7 @@ export default function Register() {
     <div className="register">
       <div className="top">
         <div className="wrapper">
-          <Link to='/'><img src='images/netfly-logo.png' className='logo' alt=''/></Link>
+          <Link to='/'><img src='/images/netfly-logo.png' className='logo' alt=''/></Link>
           <button className="loginButton" onClick={() => navigate('/login')}>Sign In</button>
         </div>
       </div>
