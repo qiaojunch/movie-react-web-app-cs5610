@@ -31,9 +31,9 @@ const PublicProfile = () => {
     // handl follow button
     const handleFollowBtn = () => {
         console.log("follow btn clicked!");
-        dispatch(followUserThunk({ 
+        dispatch( followUserThunk({ 
             followed: uid 
-        }))
+        }) )
     }
 
     return(

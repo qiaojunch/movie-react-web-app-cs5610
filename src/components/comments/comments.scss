@@ -48,7 +48,12 @@
 
     .comment-right-part {
         width: 100%;
+        position: relative;
 
+        .delete-btn {
+          float: right;
+          color: white;
+        }
         .comment-content {
             display: flex;
             align-items: center;

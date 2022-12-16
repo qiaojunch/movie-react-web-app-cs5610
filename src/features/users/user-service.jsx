@@ -42,8 +42,10 @@ export const deleteUser = async (uid) => {
     return uid;
 }
 
-export const updateUser = async (uid) => {
-    const res = await api.put(`${USER_API_URL}/${uid}`);
-    return uid;
+export const updateUser = async (updates) => {
+    const res = await api.put(`${USER_API_URL}/${updates._id}`, updates);
+    const updatedUser = res.data;
+    console.log("**user-service updatedUser888:", res.data );
+    return res.data;
 }
 

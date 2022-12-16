@@ -1,5 +1,5 @@
 import {createSlice } from "@reduxjs/toolkit";
-import { loginThunk, logoutThunk, registerThunk, profileThunk, findAllUsersThunk, findUserByIdThunk } from "./user-thunk";
+import { loginThunk, logoutThunk, registerThunk, profileThunk, findAllUsersThunk, findUserByIdThunk, updateUserThunk } from "./user-thunk";
 
 
 const initialState = {
@@ -18,7 +18,6 @@ const userSlice = createSlice({
             console.log("login loading");
         },
         [loginThunk.fulfilled]: (state, action) => {
-            console.log("login fulfilled: ", action.payload)
             state.currentUser = action.payload
             state.loading = false
         },
@@ -38,7 +37,6 @@ const userSlice = createSlice({
             state.loading = false
         },
         [logoutThunk.fulfilled]: (state, action) => {
-            console.log("logout successfull");
             state.currentUser = null;
             state.loading = false;
         },
@@ -48,7 +46,6 @@ const userSlice = createSlice({
             state.loading = false;
         },
         [profileThunk.fulfilled]: (state, action) => {
-            console.log("profile fulfiled");
             state.currentUser = action.payload
             state.loading = false
         },
@@ -63,7 +60,19 @@ const userSlice = createSlice({
         [findAllUsersThunk.fulfilled]: (state, action) => {
             state.users = action.payload
             state.loading = false
-        }
+        },
+        [updateUserThunk.fulfilled]: (state, action) => {
+            state.loading = false
+            state.currentUser = action.payload
+        },
+        [updateUserThunk.pending]: (state, action) => {
+            state.loading = true
+            console.log("***update user pending***");
+        },
+        [updateUserThunk.fulfilled]: (state, action) => {
+            state.loading = false
+            console.log("***update user rejected!***");
+        },
     }
 });
 

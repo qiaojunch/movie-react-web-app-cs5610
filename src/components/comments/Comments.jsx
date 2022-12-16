@@ -18,7 +18,7 @@ export default function Comments(props) {
           </div>
         }
         <div className="comments">
-            { comments.map((item) => <CommentItem key={item._id} comment={item} /> ) }
+            { comments && comments.map((comment) => <CommentItem key={comment._id} comment={comment} /> ) }
         </div>
     </div>
   )

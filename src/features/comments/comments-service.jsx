@@ -21,4 +21,9 @@ export const findCommentsByAuthor = async (uid) => {
     const res = await api.get(`${AUTHOR_COMMENTS_API}/${uid}/comments`);
     return res.data;
 }
+// Delete
+export const deleteCommentById = async (cid) => {
+    const res = await api.delete(`${COMMENT_API}/${cid}`);
+    return cid;
+}
 

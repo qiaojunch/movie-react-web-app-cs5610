@@ -15,3 +15,8 @@ export const findCommentsByAuthorThunk = createAsyncThunk(
     'findCommentsByAuthor',
     async (authorId) => service.findCommentsByAuthor(authorId)
 )
+
+export const deleteCommentByIdThunk = createAsyncThunk(
+    'deleteMovie',
+    async (cid) => service.deleteCommentById(cid)
+)

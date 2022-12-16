@@ -8,25 +8,37 @@ import MyList from "../../components/myList/MyList";
 import { findMoivesThunk } from "../../features/movies/movie-thunk";
 import { findCommentsByAuthorThunk } from "../../features/comments/comments-thunk";
 import CommentItem from "../../components/comments/CommentItem";
+import { updateUserThunk } from "../../features/users/user-thunk";
 
 export default function Profile() {
-    const [userName, setUserName] = useState('');
+    const [username, setUserName] = useState('');
     const [email, setEmail] = useState('');
     const { movies } = useSelector( state => state.movies );
     const { currentUser } = useSelector( state => state.users );
     const { comments } = useSelector( state => state.comments );
     const dispatch = useDispatch();
-
+    
     useEffect(() => {
-        dispatch(findMoivesThunk())
         try {
+            dispatch(findMoivesThunk())
             dispatch(findCommentsByAuthorThunk(currentUser._id))
         } catch (err) {
             console.log("profile page errors:", err);
         }
     }, []);
-    console.log("profile currUser: ", currentUser);
-    console.log("profile comment: ", comments);
+
+    const handleProfileUpdateBtn = () => {
+        const userUpdates = {
+            ...currentUser,
+            username: username,
+            email: email,
+        }
+        dispatch(updateUserThunk(userUpdates))
+        console.log("update btn clicked");
+        console.log("***current user***: ", currentUser);
+        console.log("***updated user***: ",userUpdates);
+    }
+
     return (
         <>
             <Navbar/>
@@ -53,6 +65,10 @@ export default function Profile() {
                             <div className="info">
                                 {currentUser.bio}
                             </div>
+                            <button className="update-btn"
+                                onClick={handleProfileUpdateBtn}>
+                                Update profile
+                            </button>
                             </div>
                         <hr/>
                         <MyList movies={movies} />

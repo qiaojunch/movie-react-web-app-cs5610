@@ -38,5 +38,5 @@ export const deleteUserThunk = createAsyncThunk(
 
 export const updateUserThunk = createAsyncThunk(
     'updateUser',
-    async (uid) => await service.updateUser(uid)
+    async (updates) => await service.updateUser(updates)
 )

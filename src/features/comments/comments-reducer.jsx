@@ -1,8 +1,9 @@
 import { createSlice } from "@reduxjs/toolkit";
-import { createCommentThunk, findCommentsByAuthorThunk, findCommentsByMovieThunk } from "./comments-thunk";
+import { createCommentThunk, deleteCommentByIdThunk, findCommentsByAuthorThunk, findCommentsByMovieThunk } from "./comments-thunk";
 
 const initialState = {
-    comments: []
+    comments: [],
+    loading: true,
 }
 
 const commentReducer = createSlice({
@@ -17,7 +18,11 @@ const commentReducer = createSlice({
         },
         [findCommentsByAuthorThunk.fulfilled]: (state, action) => {
             state.comments = action.payload
-        }
+        },
+        [deleteCommentByIdThunk.fulfilled]: (state, action) => {
+            // delete only returns uid in this case
+            state.loading = false;
+        },
     }
 })
 
