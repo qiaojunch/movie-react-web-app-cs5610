@@ -49,7 +49,7 @@ export default function Profile() {
                         <div className="reviews">My Lists</div>
                         <MyList movies={movies} onMovieClick={handleMovieClick} />
                     </div>
-                    <div className="d-sm-none d-md-none d-lg-block col-lg-4 col-xl-4">
+                    <div>
                     <WhoToExploreList/>
                     </div>
                 </div>
