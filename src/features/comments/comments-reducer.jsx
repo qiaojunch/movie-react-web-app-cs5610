@@ -19,9 +19,10 @@ const commentReducer = createSlice({
         [findCommentsByAuthorThunk.fulfilled]: (state, action) => {
             state.comments = action.payload
         },
-        [deleteCommentByIdThunk.fulfilled]: (state, action) => {
-            // delete only returns uid in this case
+        [deleteCommentByIdThunk.fulfilled]: (state, {payload}) => {
+            // delete only returns 
             state.loading = false;
+            state.comments = state.comments.filter(comment => comment._id !== payload)
         },
     }
 })

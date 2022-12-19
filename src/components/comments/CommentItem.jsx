@@ -10,7 +10,7 @@ export default function CommentItem(props) {
   const dispatch = useDispatch();
   // Handle delete comment
   const handleCommentDeleteBtn = () => {
-    // dispatch(deleteCommentByIdThunk( comment._id ))
+    dispatch(deleteCommentByIdThunk( comment._id ))
   }
 
   return (

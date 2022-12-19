@@ -63,13 +63,14 @@ const userSlice = createSlice({
         },
         [updateUserThunk.fulfilled]: (state, action) => {
             state.loading = false
+            console.log("***update user payload****: ", action.payload);
             state.currentUser = action.payload
         },
         [updateUserThunk.pending]: (state, action) => {
             state.loading = true
             console.log("***update user pending***");
         },
-        [updateUserThunk.fulfilled]: (state, action) => {
+        [updateUserThunk.rejected]: (state, action) => {
             state.loading = false
             console.log("***update user rejected!***");
         },

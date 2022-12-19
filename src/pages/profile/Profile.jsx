@@ -8,11 +8,12 @@ import MyList from "../../components/myList/MyList";
 import { findMoivesThunk } from "../../features/movies/movie-thunk";
 import { findCommentsByAuthorThunk } from "../../features/comments/comments-thunk";
 import CommentItem from "../../components/comments/CommentItem";
-import { updateUserThunk } from "../../features/users/user-thunk";
+import { findAllUsersThunk, updateUserThunk } from "../../features/users/user-thunk";
 
 export default function Profile() {
     const [username, setUserName] = useState('');
     const [email, setEmail] = useState('');
+    const [DOB, setDOB] = useState('');
     const { movies } = useSelector( state => state.movies );
     const { currentUser } = useSelector( state => state.users );
     const { comments } = useSelector( state => state.comments );
@@ -32,11 +33,10 @@ export default function Profile() {
             ...currentUser,
             username: username,
             email: email,
+            DOB: DOB,
         }
-        dispatch(updateUserThunk(userUpdates))
-        console.log("update btn clicked");
-        console.log("***current user***: ", currentUser);
-        console.log("***updated user***: ",userUpdates);
+        dispatch(updateUserThunk(userUpdates))   // save updated profile
+        dispatch(findAllUsersThunk())     // call to update currentUser after updating
     }
 
     return (
@@ -60,11 +60,10 @@ export default function Profile() {
                                 onSave={setEmail}
                             />
                             <h3>Date of Birth</h3>
-                            <div className="info">{currentUser.DOB}</div>
-                            <h3>Bio</h3>
-                            <div className="info">
-                                {currentUser.bio}
-                            </div>
+                            <EditField
+                                initialValue={currentUser.DOB}
+                                onSave={setDOB}
+                            />
                             <button className="update-btn"
                                 onClick={handleProfileUpdateBtn}>
                                 Update profile

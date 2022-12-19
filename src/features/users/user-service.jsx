@@ -13,7 +13,8 @@ export const findUserById = async (uid) => {
 
 export const findAllUsers = async () => {
     const res = await api.get(USER_API_URL);
-    return res.data;
+    const users = res.data;
+    return users;
 }
 
 export const register = async (user) => {
@@ -45,7 +46,6 @@ export const deleteUser = async (uid) => {
 export const updateUser = async (updates) => {
     const res = await api.put(`${USER_API_URL}/${updates._id}`, updates);
     const updatedUser = res.data;
-    console.log("**user-service updatedUser888:", res.data );
     return res.data;
 }
 
